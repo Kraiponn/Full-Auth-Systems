@@ -7,15 +7,14 @@ const myLoader = ({ src, width, quality }: ImageLoaderProps) => {
 
 export default function Home() {
   const { data: session } = useSession();
-
-  console.log(session);
+  // console.log(session);
 
   return (
     <>
-      <div className="h-screen w-screen flex items-center justify-center">
+      <div className="flex items-center justify-center w-screen h-screen">
         {session ? (
           <div className="flex flex-col gap-1 item-center">
-            <h1 className="text-red-500 text-4xl bg-yellow-300 mb-3">
+            <h1 className="mb-3 text-4xl text-red-500 bg-yellow-300">
               {session?.user?.name}
             </h1>
 
@@ -35,7 +34,7 @@ export default function Home() {
 
             <button
               onClick={() => signOut()}
-              className="bg-blue-600 py-2 px-9 rounded-md text-white hover:bg-blue-800"
+              className="py-2 text-white bg-blue-600 rounded-md px-9 hover:bg-blue-800"
             >
               Sign Out
             </button>
@@ -43,7 +42,7 @@ export default function Home() {
         ) : (
           <button
             onClick={() => signIn()}
-            className="bg-blue-600 py-2 px-9 rounded-md text-white hover:bg-blue-800"
+            className="py-2 text-white bg-blue-600 rounded-md px-9 hover:bg-blue-800"
           >
             Sign In
           </button>
